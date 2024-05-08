@@ -9,6 +9,11 @@
 */
 
 const complainBody = document.getElementById("complainBody");
+const refresh = document.getElementById("refresh")
+
+refresh.addEventListener("click", () => {
+    getComplains();
+})
 
 const state = {
     host:  'http://localhost:8000',
@@ -27,9 +32,9 @@ function getComplains() {
     .then(response => response.json())
     .then(result => {
         console.log(result);
-        state.complaints = result;
+        state.complains = result;
         complainBody.textContent = "";
-        renderComplains(result);
+        renderComplains(state.complains);
     })
 }
 
@@ -43,9 +48,10 @@ function renderComplains(compList) {
         <td>${comp.products}</td>
         <td>${comp.type}</td>
         `
-        complainBody.appendChild(tr)
+        complainBody.appendChild(tr);
     });
-
 }
+
+
 
 getComplains();

@@ -13,6 +13,13 @@
       "complainant": "Nagy Fruzsina",
       "products": "Tablet",
       "type": "Ismeretlen"
+    },
+    {
+      "id": 3,
+      "description": "Nem tölt",
+      "complainant": "Szabó Magda",
+      "products": "Telefon",
+      "type": "Ismeretlen"
     }
   ]
 }
